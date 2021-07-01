@@ -1,8 +1,8 @@
-
 import 'dotenv/config';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import { withItemData, statelessSessions } from '@keystone-next/keystone/session';
+import { ProductImage } from './schemas/ProductImage';
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 
@@ -42,6 +42,7 @@ export default withAuth(
       // Schema items go in here
       User,
       Product,
+      ProductImage,
     }),
     ui: {
       // TODO : change this for notes
