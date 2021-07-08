@@ -12,39 +12,38 @@ const Logo = styled.h1`
   a {
     color: white;
     text-decoration: none;
-    text-transforma: uppercase;
+    text-transform: uppercase;
     padding: 0.5rem 1rem;
   }
 `;
 
-const HeaderStyle = styled.h1`
+const HeaderStyles = styled.header`
   .bar {
     border-bottom: 10px solid var(--black, black);
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-    align-items: enter;
+    align-items: center;
   }
-  .sub_bar {
+  .sub-bar {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     border-bottom: 1px solid var(--black, black);
   }
 `;
 
 export default function Header() {
   return (
-    <HeaderStyle>
+    <HeaderStyles>
       <div className="bar">
         <Logo>
           <Link href="/">Sick Fits</Link>
         </Logo>
       </div>
-      <div className="sub_bar">
+      <div className="sub-bar">
         <p>Search</p>
       </div>
-      <p>I am the header</p>
       <Nav />
-    </HeaderStyle>
+    </HeaderStyles>
   );
 }

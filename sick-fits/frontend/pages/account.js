@@ -1,7 +1,1 @@
-export default function AccountPage() {
-  return (
-    <>
-      <p>Hey!</p>
-    </>
-  );
-}
+export { default } from './products';
