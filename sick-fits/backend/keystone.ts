@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import {
@@ -9,6 +8,7 @@ import { ProductImage } from './schemas/ProductImage';
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 import { insertSeedData } from './seed-data';
+import 'dotenv/config';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
@@ -33,7 +33,7 @@ export default withAuth(
     // @ts-ignore
     server: {
       cors: {
-        origin: ['process.env.FRONTEND_URL'],
+        origin: [process.env.FRONTEND_URL],
         credentials: true,
       },
     },
