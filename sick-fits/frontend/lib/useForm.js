@@ -18,7 +18,7 @@ export default function useForm(initial = {}) {
     setInputs({
       // copy the existing states
       ...inputs,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   }
 

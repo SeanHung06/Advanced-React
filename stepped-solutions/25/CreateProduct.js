@@ -48,8 +48,7 @@ export default function CreateProduct() {
         e.preventDefault();
         console.log(inputs);
         // Submit the inputfields to the backend:
-        await createProduct();
-        clearForm();
+
       }}
     >
       <DisplayError error={error} />
