@@ -12,14 +12,24 @@ export default function Product({ product }) {
         src={product?.photo?.image?.publicUrlTransformed}
         alt={product.name}
       />
-
       <Title>
         <Link href={`/product/${product.id}`}>{product.name}</Link>
       </Title>
-
       <PriceTag>{formatMoney(product.price)}</PriceTag>
       <p>{product.description}</p>
       {/* TODO : add button to edit and delete items */}
+      <div className="buttonList">
+        <Link
+          href={{
+            pathname: 'update',
+            query: {
+              id: product.id,
+            },
+          }}
+        >
+          Edit ✏️
+        </Link>
+      </div>
     </ItemStyles>
   );
 }
