@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import React from 'react';
+import SignOut from './SignOut';
 import NavStyles from './styles/NavStyles';
 import { useUser } from './User';
 
@@ -13,6 +15,7 @@ export default function Nav() {
           <Link href="/sell">sell</Link>
           <Link href="/order">order</Link>
           <Link href="/account">account</Link>
+          <SignOut />
         </>
       )}
 
