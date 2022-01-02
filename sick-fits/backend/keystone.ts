@@ -5,6 +5,7 @@ import {
   statelessSessions,
 } from '@keystone-next/keystone/session';
 import { ProductImage } from './schemas/ProductImage';
+import { CartItem } from './schemas/CartItem'; 
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 import { insertSeedData } from './seed-data';
@@ -61,6 +62,7 @@ export default withAuth(
       User,
       Product,
       ProductImage,
+      CartItem,
     }),
     ui: {
       // TODO : change this for notes
