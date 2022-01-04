@@ -39,7 +39,7 @@ async function addToCart(
   // 4. if it isnt, create a new cart item!
   return await context.lists.CartItem.createOne({
     data: {
-      product: { connect: { id: productId }},
+      product: { connect: {id: productId }},
       user: { connect: { id: sesh.itemId }},
     },
     resolveFields: false,

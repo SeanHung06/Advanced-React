@@ -10,7 +10,7 @@ import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
-import { sendPasswordResetEmail } from './lib/mail';
+import {sendPasswordResetEmail} from './lib/mail';
 import { extendGraphqlSchema } from './mutations';
 
 function check(name: string) {}
