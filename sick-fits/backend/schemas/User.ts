@@ -16,7 +16,9 @@ export const User = list({
         createView: { fieldMode: 'hidden' },
         itemView: { fieldMode: 'read' },
       }
-    })
+    }),
+
+    orders: relationship({ref:'Order.user',many : true}),
 
   },
 });
