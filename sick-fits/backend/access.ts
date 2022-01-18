@@ -8,7 +8,7 @@ export default function isSignedIn({ session}: ListAccessArgs){
 
 }
 // To avoid Typing every permission check 
-const generatedPermissions = Object.fromEntries(permissionsList.map(permissions =>[
+const generatedPermissions = Object.fromEntries(permissionsList.map(permission =>[
     permission,
     function({session}:ListAccessArgs){
         return session?.data.role.[permission];
