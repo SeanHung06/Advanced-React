@@ -75,4 +75,17 @@ export const rules = {
         // they should only see available products
         return {status: 'AVAILABLE'}
     },
+    canManageUsers({session}:ListAccessArgs){
+        // To take care of the not signed in user query order
+        if(!isSignedIn({session})){
+            return false;
+        }
+
+        // 1. Do they have the permission of canManageUsers
+        if(permissions.canManageUsers({ session })){
+            return true;
+        }
+        // 2. Otherwise they can only update themselves
+        return {  id: session.itemId } ;
+    },
 };
