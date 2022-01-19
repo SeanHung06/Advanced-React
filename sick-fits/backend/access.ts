@@ -29,6 +29,7 @@ export const permissions = {
 export const rules = {
     canManageProducts({session}:ListAccessArgs){
         // 1. Do they have the permission of canManageProducts
+        console.log({ session});
         if(permissions.canManageProducts({ session })){
             return true;
         }

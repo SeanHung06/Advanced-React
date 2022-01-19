@@ -76,13 +76,12 @@ export default withAuth(
     ui: {
       // TODO : change this for notes
       isAccessAllowed: ({ session }) => {
-        console.log(session);
         return !!session?.data;
       },
     },
     // TODO: Add session values here
     session: withItemData(statelessSessions(sessionConfig), {
-      User: `id name email{ ${permissionsList.join('')}}`,
+      User: `id name email role { ${permissionsList.join(' ')}}`,
     }),
   })
 );
