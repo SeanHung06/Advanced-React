@@ -13,6 +13,6 @@ export const Role = list({
             ui:{
                 itemView: { fieldMode: 'read' },
             },
-        })
-    }
-})
+        }),
+    },
+});

@@ -1,14 +1,14 @@
 import { select, text, integer, relationship } from '@keystone-next/fields';
 import { list } from '@keystone-next/keystone/schema';
-import isSignedIn from '../access';
+import { rules, isSignedIn } from '../access';
 
 export const Product = list({
   // access Limited the Product Access TO CRUD 
   access: {
     create: isSignedIn,
-    read: isSignedIn,
-    update: isSignedIn,
-    delete: isSignedIn,
+    read: rules.canReadProducts,
+    update: rules.canManageProducts,
+    delete: rules.canManageProducts,
   },
 
   fields: {
@@ -41,6 +41,12 @@ export const Product = list({
       },
     }),
     price: integer(),
-    // TODO: Photo
+    user: relationship({
+      ref: 'User.products',
+      defaultValue:({ context })=> ({
+        connect: { id: context.session.itemId}, // DefaultValue is the current SignedIn User and return an object which is a Connected property
+      }),
+    }),
+
   },
 });
