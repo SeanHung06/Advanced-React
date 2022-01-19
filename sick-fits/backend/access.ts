@@ -28,15 +28,47 @@ export const permissions = {
 // Rules can return a boolean -yes or no - on a filter which limits which products they can CRUD
 export const rules = {
     canManageProducts({session}:ListAccessArgs){
+        // To take care of the not signed in user query order
+        if(!isSignedIn({session})){
+            return false;
+        }
         // 1. Do they have the permission of canManageProducts
-        console.log({ session});
         if(permissions.canManageProducts({ session })){
             return true;
         }
         // 2. If not, do they own this item?
         return { user: { id: session.itemId } };
     },
+    canOrder({session}:ListAccessArgs){
+        // To take care of the not signed in user query order
+        if(!isSignedIn({session})){
+            return false;
+        }
+
+        // 1. Do they have the permission of canManageProducts
+        if(permissions.canManageCart({ session })){
+            return true;
+        }
+        // 2. If not, do they own this item?
+        return { user: { id: session.itemId } };
+    },
+    canManageOrderItems({session}:ListAccessArgs){
+        // To take care of the not signed in user query order
+        if(!isSignedIn({session})){
+            return false;
+        }
+        // 1. Do they have the permission of canManageProducts
+        if(permissions.canManageCart({ session })){
+            return true;
+        }
+        // 2. First  Query the Order and the Query the related User and check their ID to make sure they are lined up with what they have
+        return { order: {user: { id: session.itemId } } }; 
+    },
     canReadProducts({ session }: ListAccessArgs) {
+        // To take care of the not signed in user query order
+        if(!isSignedIn({session})){
+            return false;
+        }
         if(permissions.canManageProducts({ session })){
             return true;
         }
