@@ -9,8 +9,9 @@ const Logo = styled.h1`
   margin-left: 2rem;
   position: relative;
   z-index: 2;
-  background: red;
-  transform: skew(-7deg);
+  background: #77b67d;
+  opacity: .9;
+  transform: skew(-10deg);
   a {
     color: white;
     text-decoration: none;
@@ -39,7 +40,7 @@ export default function Header() {
     <HeaderStyles>
       <div className="bar">
         <Logo>
-          <Link href="/">Sick Fits</Link>
+          <Link href="/">Reactify Shop</Link>
         </Logo>
         <Nav />
       </div>

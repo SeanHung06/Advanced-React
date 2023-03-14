@@ -7,7 +7,8 @@ const Title = styled.h3`
   margin-top: -3rem;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   a {
-    background: var(--red);
+    background: #77b67d;
+    opacity: .8;
     display: inline;
     line-height: 1.3;
     font-size: 4rem;

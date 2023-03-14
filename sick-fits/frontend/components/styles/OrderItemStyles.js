@@ -29,6 +29,7 @@ const OrderItemStyles = styled.li`
     display: grid;
     grid-gap: 1rem;
     text-align: center;
+    font-size: 1.5rem ;
     & > * {
       margin: 0;
       background: rgba(0, 0, 0, 0.03);

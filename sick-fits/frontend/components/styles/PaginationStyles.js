@@ -10,6 +10,8 @@ const PaginationStyles = styled.div`
   margin: 2rem 0;
   border: 1px solid var(--lightGray);
   border-radius: 10px;
+  font-size: 1.5rem;
+
   & > * {
     margin: 0;
     padding: 15px 30px;
