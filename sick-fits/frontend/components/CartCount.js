@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const Dot = styled.div`
-  background: var(--red);
+  background: #77b67d;
   color: white;
   border-radius: 50%;
   padding: 0.5rem;

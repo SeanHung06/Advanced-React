@@ -11,6 +11,7 @@ import { Checkout } from './Checkout';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
+  font-size: 1.5rem;
   border-bottom: 1px solid var(--lightGrey);
   display: grid;
   grid-template-columns: auto 1fr auto;
