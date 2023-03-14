@@ -29,20 +29,16 @@ export default function SignIn() {
     email: '',
     password: '',
   });
-  console.log(inputs.email, inputs.password);
   const [signin, { data , loading }] = useMutation(SIGNIN_MUTATION, {
     variables: inputs,
     // refetch the current logged in user
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
 
-  console.log(data);
   async function handleSubmit(e) {
     e.preventDefault(); // stop the form from submitting
 
-    console.log(inputs);
     const res = await signin();
-    console.log(res);
     resetForm();
   }
   const error =

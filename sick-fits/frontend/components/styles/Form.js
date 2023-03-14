@@ -50,7 +50,7 @@ const Form = styled.form`
   fieldset {
     border: 0;
     padding: 0;
-
+    font-size: 1.5rem;
     &[disabled] {
       opacity: 0.5;
     }

@@ -32,7 +32,7 @@ export default function Nav() {
 
       {!user && (
         <>
-          <Link href="/signin">SignIn</Link>
+          <Link href="/SignIn">SignIn</Link>
         </>
       )}
     </NavStyles>

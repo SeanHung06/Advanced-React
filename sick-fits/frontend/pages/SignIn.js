@@ -6,7 +6,7 @@ import SignUp from '../components/SignUp';
 const GridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 5rem;
 `;
 
 export default function SignInPage() {
